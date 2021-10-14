@@ -16,24 +16,22 @@
 
 - Storage Account Kind
     -v1
-        - Blob
+        - Blob (Block | Append | Page)
         - Table
         - Queue
         - File
-    - BlockBlob account
+    - BlobStorage Account
         - Blob
-    - standard
-        - v2
-            - Blob (blockBlob | append | page)
+    - standard v2
+            - Blob (Block | Append | Page)
             - Table
             - Queue
             - File
-    - premium
+    - premium v2
         - v2 account
             - Blob (Page)
         - BlockBlob account
-            - BlockBlob
-            - Append
+            - Blob (Block | Append)
         - File account
             - File
 - Replication
@@ -56,8 +54,23 @@
         - same as GRS with secondary read
     - RA-GZRS read access geo zone redundent storage
         - same as GZRS with secondary read
+- Properties and Metadata
+    - Properties
+        - etag
+        - lastmodified
+        - content-type
+    - Metadata
+    - dictionary on blob
 
-
+- Access Tiers
+    - supported by v2 and blobstorage v1
+    - on account
+        - hot
+        - cool
+    - on blob
+        - hot
+        - cool
+        - archieve
 :::mermaid
     classDiagram
     direction LR
