@@ -36,17 +36,17 @@
             - File
 - Replication
     - LRS : local redundent storage
-        - three copies are created in the same region and same zone (data center)
+        - three copies are created in ONE region under ONE zone (data center)
     - ZRS : zone redundent storage
-        - three copies are created in the same region across three zones (data centers)
+        - three copies are created in ONE region across THREE zones (data centers)
     - GRS : geo redundent storage
-        - three copies are created in the same region and same zone (data center)
-        - three copies are created in another region and same zone (data center)
+        - three copies are created in ONE region under ONE zone (data center)
+        - three copies are created in another region under ONE zone (data center)
         - read/write on primary
         - fail over which takes an hour needed to read from secondary
     - GZRS : geo zone redundent storage
-        - three copies are created in the same region across three zones (data centers)
-        - three copies are created in another region in the same zone (data centers)
+        - three copies are created in ONE region across THREE zones (data centers)
+        - three copies are created in another region under ONE zone (data centers)
         - read/write on primary
         - read/write on primary
         - fail over which takes an hour needed to read from secondary
@@ -71,6 +71,30 @@
         - hot
         - cool
         - archieve
+- Blob Life Cycle
+    - move | change tier | delete blobs with last updated datetime stamp
+- Soft Delete
+    - on storage account.
+    - specify number of days till which a blob can be marked as deleted and then recovered
+    - enabled "Show Deleted Blobs"
+- Snapshots and versions
+    - versioning need to be enabled on the storage account
+    - create version
+    - make a specific version current version
+    - adds version parameters in the uri with SAS token
+    
+
+- Leases
+    - acquire lease, specify lease id with every request to change blob
+- Immutable blobs
+    - policy
+        - time based : blob cannot be edited. blob can be deleted after the time duration
+        - legal hold using tags : blob cannot be edited or deleted
+    - defined on container
+    - if blob has a tag, implies that the policy is applied
+
+- Tools
+    - azure cli
 :::mermaid
     classDiagram
     direction LR
