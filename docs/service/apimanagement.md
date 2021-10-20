@@ -30,11 +30,26 @@
 ### Policy
 - applied to API / Product / Api / Operation
 - types
-    - inbound : request received from client
-    - backend : before forwarding to backend managed api
-    - outbound: before sending response to client
-    - onerror : after error is raised
-
+    - inbound : execute when request is received from client
+    - backend : execute before forwarding to backend managed api
+    - outbound: execute before sending response to client
+    - onerror : execute after error is raised
+- access restriction
+    - rate limit by key | by subscription
+    - authentication
+    - usage quota / bandwidth quota
+    - header policies
+- advanced 
+    - mock response
+    - call backend service
+    - change http method
+    - retry endpoints
+    - add logging / tracing
+- transformation
+    - content-type : XML to JSON or JSON to XML
+    - replace content in the body
+- caching
+    - 
 :::mermaid
     classDiagram
     direction LR
@@ -51,16 +66,16 @@
     }
 
     class Product{
-       List<Api>
-       Policy
        IsProtected
+       List<Api>
+       List<Subscription>
+       Policy
        Publish(Api)
+       AddSubscription(Developer)
     }
 
     class Api {
         List<Operation>
-        List<Subscription>
-        AddSubscription()
     }
     class Developer
 
