@@ -1,6 +1,19 @@
-# compute
-## serverless
-#### azure function
+# azure function
+  
+## reference
+  - [Pluralsight : Microsoft Azure Developer Implement Azure Functions (Intermediate)](https://app.pluralsight.com/library/courses/microsoft-azure-developer-implement-azure-functions/table-of-contents)
+
+## properties
+- triggers
+    - timer based
+        - cron job expression `s m h d month dayofweek`
+    - http
+    - blob
+    - message based
+- binding
+    - input : read data 
+    - output : write data 
+## structure
 - service is made of two components : runtime (provides binding) and scaling component (manages invocation and number of instances)
 - hosting : on all plans, azure function service needs azure storage account that provides blob, queue, file and table.
     - consumption plan
@@ -33,14 +46,18 @@
     FunctionService "1"--> "*" Function
 :::
 
-#### durable function
-there are four interactions that durable functions support
-- function chaining
-- fan out
-- monitor
-- human interaction
+# durable function
+patterns
+    - function chaining
+    - fan out
+    - monitor
+    - async http api (calling a service to check on status)
+    - human interaction
 there are four types of durable functions
-- orchestration function : needs the behavior to be deterministic
-- activity function : does the actual work
+- starter : initiatizes the process. simple azure function
+    - `IDurableOrchestrationClient` to start orchestration
+- orchestrator : defines steps in function
+    - `IDurableOrchestrationContext` context which is used to call activity `context.CallActivityAsync<>`
+- activity : multiple
+    - `ActivityTrigger` binds input
 - entity function : controls entity persistance
-- xx ?
