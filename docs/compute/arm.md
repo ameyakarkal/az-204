@@ -25,3 +25,13 @@
    }
 }
 ```
+
+## deployment
+
+```powershell
+New-AzResourceGroupDeployment `
+  -Name "deployment-01" `
+  -ResourceGroupName "eastus2-app" `
+  -TemplateFile "./path-to-template" `
+  -TemplateParameterFile "./path-to-parameters"
+```
