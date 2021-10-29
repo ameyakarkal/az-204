@@ -6,7 +6,7 @@
 - 05 : consume, connect to azure services and third party services
 
 01. Develop Azure Compute Solutions
-    - VMs
+    - [VM](docs/compute/vm.md)
     - Docker / Images / Azure Container Instances
     - Azure App Service / Web Apps
     - Azure Functions
