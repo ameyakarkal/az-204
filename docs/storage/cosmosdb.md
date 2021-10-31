@@ -79,3 +79,6 @@ az cosmodb sql container create \
     - physical        
     - partition key 
     - replica set
+
+### Azure Function handling Change Feed for CosmosDB
+- creates a separate collection (for leases) to handle what change feed needs to be handled on the original collection (container)
