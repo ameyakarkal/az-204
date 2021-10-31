@@ -24,9 +24,6 @@
     - [Azure API Management](docs/service/apimanagement.md)
     - [Azure CDN](docs/service/cdn.md)
     - [Azure Service Bus & Azure Storage Message](docs/service/messaging.md)
-        - Service Bus
-        - Storage Messaging
+        - Service Bus | Storage Messaging
     - [Event Based Solutions](docs/service/event.md)
-        - Event Hub
-        - Evetn Grid
-        - Notification Hubs
+        - Event Hub | Event Grid | Notification Hubs
